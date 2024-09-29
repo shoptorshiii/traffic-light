@@ -1,0 +1,38 @@
+// Define pin numbers
+const int redPin = 12;
+const int yellowPin = 11;
+const int greenPin = 10;
+
+// Define time intervals (in milliseconds)
+const int redDuration = 5000;    // 5 seconds
+const int yellowDuration = 2000; // 2 seconds
+const int greenDuration = 5000;  // 5 seconds
+
+void setup() {
+  // Initialize the digital pins as outputs
+  pinMode(redPin, OUTPUT);
+  pinMode(yellowPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+}
+
+void loop() {
+  // Red light
+  digitalWrite(redPin, HIGH);
+  delay(redDuration);
+
+  // Red and yellow lights
+  digitalWrite(redPin, HIGH);
+  digitalWrite(yellowPin, HIGH);
+  delay(yellowDuration);
+
+  // Green light
+  digitalWrite(yellowPin, LOW);
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  delay(greenDuration);
+
+  // Yellow light
+  digitalWrite(greenPin, LOW);
+  digitalWrite(yellowPin, HIGH);
+  delay(yellowDuration);
+}
